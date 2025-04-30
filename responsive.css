@@ -1,0 +1,228 @@
+/*===========================
+    RESPONSIVE STYLES
+============================*/
+
+/* Medium Devices (laptops and tablets, 992px and down) */
+@media (max-width: 992px) {
+    /* General */
+    .section {
+        padding: 80px 0;
+    }
+    
+    /* Header */
+    #header {
+        background-color: var(--light-color);
+        padding: 15px 0;
+        box-shadow: var(--box-shadow);
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100%;
+        background-color: var(--light-color);
+        box-shadow: var(--box-shadow);
+        z-index: 999;
+        padding: 80px 20px 30px;
+        transition: var(--transition);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+    }
+    
+    .nav-menu ul li {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+    .nav-menu ul li a {
+        font-size: 18px;
+    }
+    
+    /* Hero */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-btns {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .hero-image {
+        justify-content: center;
+    }
+    
+    .profile-image {
+        max-width: 300px;
+    }
+    
+    /* About */
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .hobbies {
+        justify-content: center;
+    }
+    
+    .stat-box {
+        padding: 15px;
+    }
+    
+    .stat-count {
+        font-size: 30px;
+    }
+    
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    /* Contact */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        margin-bottom: 30px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-nav ul {
+        justify-content: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* Small Devices (tablets and large phones, 768px and down) */
+@media (max-width: 768px) {
+    /* General */
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 30px;
+    }
+    
+    /* Hero */
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    
+    .hero-text h3 {
+        font-size: 20px;
+    }
+    
+    .hero-text p {
+        font-size: 16px;
+    }
+    
+    /* About */
+    .about-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 576px) {
+    /* General */
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* Hero */
+    .hero {
+        height: auto;
+        padding: 120px 0 80px;
+    }
+    
+    .hero-text h1 {
+        font-size: 30px;
+    }
+    
+    .hero-text h3 {
+        font-size: 18px;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .hero-btns .btn {
+        width: 100%;
+    }
+    
+    /* About */
+    .hobbies {
+        flex-wrap: wrap;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Profile Image */
+    .profile-image {
+        max-width: 250px;
+    }
+    
+    /* Back to Top */
+    #backToTop {
+        right: 15px;
+        bottom: 15px;
+    }
+}
