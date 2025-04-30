@@ -9,7 +9,7 @@
         content="Front-end developer portfolio for Darshan T, showcasing skills in HTML, CSS, JavaScript, Angular and more">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,6 +24,15 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "roZD9_sPVf4Zk-Lgw",
+            });
+        })();
+    </script>
 </head>
 
 <body>
@@ -470,7 +479,7 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send a Message</h3>
-                    <form id="contactForm" action="https://formspree.io/f/xeqbjvzy" method="POST">
+                    <form id="contactForm" onsubmit="sendMail(event)" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
