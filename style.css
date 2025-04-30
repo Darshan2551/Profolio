@@ -2,7 +2,7 @@
     GENERAL STYLES
 ============================*/
 :root {
-    /* Colors */
+    /* Colors - Light Theme (Default) */
     --primary-color: #4169E1;     /* Royal Blue */
     --secondary-color: #E6E6FA;   /* Lavender */
     --dark-color: #333333;        /* Dark Gray */
@@ -10,6 +10,9 @@
     --gray-color: #F4F4F4;        /* Light Gray */
     --text-color: #333333;        /* Text Color */
     --text-light: #777777;        /* Light Text Color */
+    --bg-color: #FFFFFF;          /* Background Color */
+    --card-bg: #FFFFFF;           /* Card Background */
+    --header-bg: #FFFFFF;         /* Header Background when fixed */
     
     /* Typography */
     --heading-font: 'Raleway', sans-serif;
@@ -19,6 +22,20 @@
     --transition: all 0.3s ease;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --border-radius: 5px;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --secondary-color: #1E2130;   /* Dark Lavender */
+    --dark-color: #F4F4F4;        /* Light Gray for dark mode */
+    --light-color: #121212;       /* Almost Black */
+    --gray-color: #2C2C2C;        /* Darker Gray */
+    --text-color: #F4F4F4;        /* Light Text Color */
+    --text-light: #BBBBBB;        /* Lighter Text Color */
+    --bg-color: #121212;          /* Dark Background */
+    --card-bg: #1E1E1E;           /* Card Background */
+    --header-bg: #1A1A1A;         /* Header Background when fixed */
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -36,7 +53,9 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-color);
+    background-color: var(--bg-color);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -164,7 +183,7 @@ img {
 }
 
 #header.fixed {
-    background-color: var(--light-color);
+    background-color: var(--header-bg);
     padding: 15px 0;
     box-shadow: var(--box-shadow);
 }
@@ -857,4 +876,38 @@ footer {
 /* Fix font-awesome cricket icon */
 .fa-cricket-bat-ball:before {
     content: "\f449"; /* Using the baseball icon as fallback */
+}
+
+/*===========================
+    THEME TOGGLE
+============================*/
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    transform: translateY(-3px);
+}
+
+.theme-toggle i {
+    font-size: 20px;
+    transition: transform 0.5s ease;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(45deg);
 }
