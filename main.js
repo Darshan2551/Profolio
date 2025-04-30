@@ -74,48 +74,48 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Submit Form
-  function handleSubmit(e) {
-    e.preventDefault();
+  // function handleSubmit(e) {
+  //   e.preventDefault();
 
-    // Get form values
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
+  //   // Get form values
+  //   const name = document.getElementById("name").value;
+  //   const email = document.getElementById("email").value;
+  //   const subject = document.getElementById("subject").value;
+  //   const message = document.getElementById("message").value;
 
-    // Validate form
-    if (!name || !email || !subject || !message) {
-      alert("Please fill in all fields");
-      return;
-    }
+  //   // Validate form
+  //   if (!name || !email || !subject || !message) {
+  //     alert("Please fill in all fields");
+  //     return;
+  //   }
 
-    // Submit form using formspree
-    const formData = new FormData(contactForm);
+  //   // Submit form using formspree
+  //   const formData = new FormData(contactForm);
 
-    fetch(contactForm.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error("Network response was not ok.");
-      })
-      .then((data) => {
-        alert("Thank you for your message. I will get back to you soon!");
-        contactForm.reset();
-      })
-      .catch((error) => {
-        alert(
-          "There was a problem submitting your form. Please try again later."
-        );
-        console.error("Error:", error);
-      });
-  }
+  //   fetch(contactForm.action, {
+  //     method: "POST",
+  //     body: formData,
+  //     headers: {
+  //       Accept: "application/json",
+  //     },
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       }
+  //       throw new Error("Network response was not ok.");
+  //     })
+  //     .then((data) => {
+  //       alert("Thank you for your message. I will get back to you soon!");
+  //       contactForm.reset();
+  //     })
+  //     .catch((error) => {
+  //       alert(
+  //         "There was a problem submitting your form. Please try again later."
+  //       );
+  //       console.error("Error:", error);
+  //     });
+  // }
 
   // Event Listeners
 
@@ -162,3 +162,22 @@ document.addEventListener("DOMContentLoaded", function () {
     icon.classList.add("fa-baseball-ball"); // Using baseball as fallback
   });
 });
+
+function sendMail(event) {
+  event.preventDefault(); // stop form from submitting and refreshing the page
+
+  let parms = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value,
+  };
+
+  emailjs
+    .send("service_7tyjlqf", "template_4lucuzo", parms)
+    .then(function (response) {
+      window.location.href = "thankyou.html";
+      console.log("SUCCESS!", response.status, response.text);
+      document.getElementById("feedback-form").reset(); // clear the form after sending
+    });
+}
