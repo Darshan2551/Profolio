@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Submit Form
+    /*Submit Form
     function handleSubmit(e) {
         e.preventDefault();
         
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error:', error);
         });
     }
-    
+    */
     // Event Listeners
     
     // Mobile Menu Toggle
