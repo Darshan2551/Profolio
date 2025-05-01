@@ -311,7 +311,7 @@ img {
   overflow: hidden;
 }
 
-.hero::before {
+/* .hero::before {
   content: "";
   position: absolute;
   top: -50px;
@@ -322,7 +322,7 @@ img {
   background: rgba(65, 105, 225, 0.1);
   z-index: 0;
 }
-
+ */
 /* .hero::after {
   content: "";
   position: absolute;
